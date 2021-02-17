@@ -2,10 +2,6 @@ name: build
 
 on: 
   workflow_dispatch:
-    inputs:
-      commit:
-        description: 'Branch or commit to build'
-        required: true
 
 jobs:
 
@@ -13,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.inputs.commit }}
       - name: build
         run: echo "running build..."
       - name: check HEAD
