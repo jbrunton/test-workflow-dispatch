@@ -6,7 +6,6 @@ on:
       commit:
         description: 'Branch or commit to build'
         required: true
-  pull_request:
 
 jobs:
 
