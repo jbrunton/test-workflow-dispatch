@@ -1,0 +1,16 @@
+name: build
+
+on: 
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: 'Branch or commit to build'
+        required: true
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: echo "running build for commit $GITHUB_SHA..."
