@@ -13,4 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build
-        run: echo "running build for commit $GITHUB_SHA..."
+        run: echo "running build..."
+      - name: log github context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: log env
+        env:
+          ENV_CONTEXT: ${{ toJSON(env) }}
+        run: echo "$ENV_CONTEXT"
