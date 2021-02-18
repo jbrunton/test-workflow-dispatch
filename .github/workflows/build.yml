@@ -12,4 +12,7 @@ jobs:
       - name: build
         run: echo "running build..."
       - name: check HEAD
-        run: git rev-parse HEAD
+        run: |
+          git rev-parse HEAD
+          git branch --show-current
+
